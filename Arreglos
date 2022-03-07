@@ -1,0 +1,50 @@
+public class ejercicio1 {
+public static void main(String[] args) {
+	int op,op2,cantidad = 0,empleados=0,bandera = 0,j;
+	
+	float i = 0,a,r;
+	int Empleados[]= new int [cantidad];
+	float sueldos;
+	float Sueldos[]= new float[cantidad];
+	float[] resultadosIsss = new float[cantidad];
+	float[] resultadosRenta = new float[cantidad];
+	float[] resultadosAfp = new float[cantidad];
+	
+	cantidad=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese la cantidad de empleados"));
+
+	do {
+
+
+		op=Integer.parseInt(JOptionPane.showInputDialog(null,"1.ingresar sueldos"+"2.calcular"+"3.salir"));
+		if(op==1) {
+			sueldos=Float.parseFloat(JOptionPane.showInputDialog(null,"Ingrese los sueldos de los"+Empleados.length+" empleados"));
+			if(bandera<Sueldos.length) {
+				resultadosIsss[bandera]=  isss(sueldos,i);
+				resultadosRenta[bandera]=  renta(sueldos,i);
+				resultadosAfp[bandera]=  afp(sueldos,i);
+				i++;
+			}if(op==2) {
+				for(j=0;i<Sueldos.length;j++) {
+					JOptionPane.showMessageDialog(null, "Empleado: "+(j+1)+" Renta: "+resultadosRenta[j]+"Isss: "+resultadosIsss[j]+"AFP: "+resultadosAfp[j]+"Total a pagar: "+resultadosRenta[j]+resultadosIsss[j]+resultadosAfp[j]);
+				}
+			}
+	}
+	}while(op==3);
+}public static float isss(float sueldos,float i) {
+	double porcentaje=0.03;
+	
+	i = (float) (porcentaje * 0.03);
+	return i;
+	
+}public static float afp(float sueldos,float a) {
+	double porcentaje=0.0625;
+	
+	a=(float) (sueldos * 0.0625);
+	return a;
+}public static float renta(float sueldos,float r) {
+	double porcentaje=0.071;
+	
+	r=(float) (sueldos * 0.0625);
+	return r;
+}
+}
